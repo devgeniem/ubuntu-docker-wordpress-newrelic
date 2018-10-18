@@ -1,4 +1,4 @@
-FROM devgeniem/ubuntu-docker-wordpress:beta
+FROM devgeniem/ubuntu-docker-wordpress:php72
 MAINTAINER Ville Pietarinen - Geniem Oy <ville.pietarinen-nospam@geniem.com>
 
 ARG NR_INSTALL_SILENT=1
