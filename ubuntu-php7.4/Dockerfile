@@ -2,6 +2,7 @@ FROM devgeniem/ubuntu-docker-wordpress:edge
 MAINTAINER Ville Pietarinen - Geniem Oy <ville.pietarinen-nospam@geniem.com>
 
 ARG NR_INSTALL_SILENT=1
+ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
 # Install newrelic for php
 RUN \
