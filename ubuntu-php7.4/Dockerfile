@@ -6,12 +6,14 @@ ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
 # Install newrelic for php
 RUN \
+    # Add gpg-agent package
+    apt-get update \
+    && apt-get install gpg-agent -y \
     # Add newrelic as apt-get source
-    echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' > /etc/apt/sources.list.d/newrelic.list \
+    && echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' > /etc/apt/sources.list.d/newrelic.list \
     && curl -L https://download.newrelic.com/548C16BF.gpg | apt-key add - \
-
-    # Install package from newrelic
     && apt-get update \
+    # Install package from newrelic
     && apt-get install newrelic-php5 -y \
 
     # Cleanup
